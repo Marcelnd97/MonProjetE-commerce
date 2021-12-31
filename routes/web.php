@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\CheckoutComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\ShopComponent;
+use App\Http\Livewire\User\UserDashboardComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,11 +39,11 @@ Route::get('/checkout', CheckoutComponent::class);
 //Route pour les clients
 
 Route::middleware(['auth:sanctum','verified'])->group(function() {
-
+    Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
 });
 
 //Route pour l'administrateur
 
-Route::middleware(['auth:sanctum','verified'])->group(function() {
-
+Route::middleware(['auth:sanctum','verified', 'AuthAdmin'])->group(function() {
+    Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
 });

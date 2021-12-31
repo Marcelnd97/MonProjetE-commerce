@@ -1,3 +1,3 @@
 <div>
-    {{-- Be like water. --}}
+    <h1>User dashboard</h1>
 </div>

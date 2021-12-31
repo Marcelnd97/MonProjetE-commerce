@@ -74,8 +74,15 @@
 												<a title="Mon Compte" href="#">Mon Compte ({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 												<ul class="submenu curency" >
 													<li class="menu-item" >
-														<a title="Tablea de Bord" href="#">Tablea de Bord</a>
+														<a title="Tablea de Bord" href="{{route('admin.dashboard')}}">Tableau de Bord</a>
 													</li>
+													
+													<li class="menu-item">
+														<a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Se Déconnecter</a>
+													</li>
+													<form id="logout-form" action="{{route('logout')}}" method="POST">
+														@csrf
+													</form>
 												</ul>
 											</li>
 											
@@ -85,8 +92,15 @@
 												<a title="Mon Compte" href="#">Mon Compte ({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 												<ul class="submenu curency" >
 													<li class="menu-item" >
-														<a title="Tablea de Bord" href="#">Tablea de Bord</a>
+														<a title="Tablea de Bord" href="{{route('user.dashboard')}}">Tableau de Bord</a>
 													</li>
+													<li class="menu-item">
+														<a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Se Déconnecter</a>
+													</li>
+													<form id="logout-form" action="{{route('logout')}}" method="POST">
+														@csrf
+														
+													</form>	
 												</ul>
 											</li>	
 										@endif	
