@@ -22,21 +22,16 @@ class CartComponent extends Component
         Cart::update($rowId,$qty);
     }
 
-    // public function destroy($rowId)
-    // {
-    //     Cart::remove($rowId);
-    //     session()->flash('success_message','un élément vient d\'être supprimer');
-    // }
-
     public function destroy($rowId)
     {
         Cart::remove($rowId);
-        session()->flash('success_message','Item removed');
+        session()->flash('danger_message','Un article est supprimé de votre panier !');
     }
 
     public function destroyAll()
     {
         Cart::destroy();
+        session()->flash('danger_messages','Vous Venez de vider les article de votre panier !');
     }
 
     public function render()

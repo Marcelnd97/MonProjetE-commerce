@@ -78,7 +78,12 @@
 													<li class="menu-item" >
 														<a title="Tablea de Bord" href="{{route('admin.dashboard')}}">Tableau de Bord</a>
 													</li>
-													
+													<li class="menu-item">
+													   <a title="Categories" href="{{route('admin.categories')}}">Categories</a>
+													</li>
+													<li class="menu-item">
+														<a title="products" href="{{route('admin.products')}}">Les Products</a>
+													 </li>
 													<li class="menu-item">
 														<a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Se Déconnecter</a>
 													</li>

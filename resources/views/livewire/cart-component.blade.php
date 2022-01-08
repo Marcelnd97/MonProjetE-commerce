@@ -13,9 +13,21 @@
             <div class="wrap-iten-in-cart">
                 @if (Session::has('success_message'))
                     <div class="alert alert-success">
-                        <Strong>Success</Strong> {{Session::get('success_message')}}
+                        <Strong>Super Bien !!!</Strong> {{Session::get('success_message')}}
                     </div>
                 @endif
+
+                @if (Session::has('danger_message'))
+                    <div class="alert alert-danger">
+                        <Strong>Navré !!!</Strong> {{Session::get('danger_message')}}
+                    </div>
+                @endif
+
+            @if (Session::has('danger_messages'))
+                <div class="alert alert-danger">
+                    <Strong>Désolé !!!</Strong> {{Session::get('danger_messages')}}
+                </div>
+            @endif
                 @if (Cart::count() > 0)
                     <h3 class="box-title">Noms produits</h3>
                     <ul class="products-cart">
