@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class HomeSlider extends Model
 {
+    protected $table = 'home_sliders';
     use HasFactory;
 }
